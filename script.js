@@ -1,14 +1,28 @@
-const navToggleBtn = document.querySelector("[data-nav-toggle-btn]");
-const header = document.querySelector("[data-header]");
+  const header = document.querySelector('.header');
 
-navToggleBtn.addEventListener("click", function () {
-  this.classList.toggle("active");
-  header.classList.toggle("active");
-});
+  const contactButton = document.querySelector('.btn.btn-primary');
 
-const goTopBtn = $("[data-go-top]");
+    function displayAlert() {
+      alert('Thank you for contacting us!');
+    }
+  
+  contactButton.addEventListener('click', displayAlert);
 
-window.addEventListener("scroll", function () {
-  window.scrollY >= 500 ? goTopBtn.classList.add("active")
-    : goTopBtn.classList.remove("active");
-});
+
+  const subtitle = document.querySelector('.section-subtitle');
+
+    window.addEventListener('click', function() {
+      subtitle.textContent = 'Welcome to Our Travel World';
+    });
+
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
+
+
+const goTopButton = $('.go-top');
+goTopButton.addEventListener('click', scrollToTop);
